@@ -870,7 +870,7 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ intakeData: data.intake_data, conversation: propHistory }),
-          }).catch(() => {});
+          }).then(r => r.json()).then(d => console.log('[proposal]', JSON.stringify(d))).catch(e => console.error('[proposal error]', e));
         }
       }
 
