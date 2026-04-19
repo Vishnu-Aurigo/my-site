@@ -546,7 +546,7 @@ module.exports = async function handler(req, res) {
 
       // Track what succeeded
       if (toolCall.function.name === 'render_proposal_pdf' && result.success) results.proposal = true;
-      if (toolCall.function.name === 'send_email' && result.success) results.email = true;
+      if (toolCall.function.name === 'send_email') { results.email = result.success; results.email_error = result.error || null; }
       if (toolCall.function.name === 'store_lead' && result.success) results.stored = true;
       if (toolCall.function.name === 'alert_owner' && result.success) results.alerted = true;
 
