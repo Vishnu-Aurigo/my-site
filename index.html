@@ -869,7 +869,7 @@
           fetch('/api/generate-proposal', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ intake_data: data.intake_data, messages: propHistory }),
+            body: JSON.stringify({ intakeData: data.intake_data, conversation: propHistory }),
           }).catch(() => {});
         }
       }
